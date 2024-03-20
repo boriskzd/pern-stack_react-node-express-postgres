@@ -1,5 +1,6 @@
-const Pool = require("pg").Pool;
-require("dotenv").config();
+import "dotenv/config"; // for process.env. variables
+import pkg from "pg"; // postgres
+const { Pool } = pkg;
 
 const pool = new Pool({
 	user: process.env.DB_USER,

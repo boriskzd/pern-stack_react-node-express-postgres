@@ -3,6 +3,7 @@
 	"version": "1.0.0",
 	"description": "PERN app: Node.JS + Express, PostgreSQL, React",
 	"main": "index.js",
+	"type": "module",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
