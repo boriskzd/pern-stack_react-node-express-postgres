@@ -45,11 +45,8 @@ const getMerchants = async () => {
 			});
 		});
 	} catch (error_1) {
-		console.error(error_1);
 		throw new Error("Internal server error");
 	}
 };
 
-// test functions ( CANNOT TEST BY RUNNING node backend/merchantModel.js IN TERMINAL )
-// getMerchants();
 export { getMerchants };

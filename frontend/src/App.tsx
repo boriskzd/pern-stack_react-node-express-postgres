@@ -7,12 +7,15 @@ function App() {
 	const [merchants, setMerchants] = useState<Merchants>(false);
 
 	function getMerchant() {
-		fetch("http://localhost:3001")
+		fetch("http://localhost:3001") // TODO: import this port from backend ?
 			.then((response) => {
 				return response.text();
 			})
 			.then((data) => {
 				setMerchants(data);
+			})
+			.catch((error) => {
+				console.log(error);
 			});
 	}
 
