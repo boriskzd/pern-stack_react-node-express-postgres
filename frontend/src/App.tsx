@@ -1,10 +1,17 @@
 import { useState, useEffect } from "react";
 import "./App.css";
+import Table from "./components/tables/Table";
 
-type Merchants = string | false;
+export interface Merchant {
+	id: number;
+	name: string;
+	email: string;
+}
+
+export type Merchants = Merchant[] | null;
 
 function App() {
-	const [merchants, setMerchants] = useState<Merchants>(false);
+	const [merchants, setMerchants] = useState<Merchants>(null);
 
 	function getMerchant() {
 		fetch("http://localhost:3001") // TODO: import this port from backend ?
@@ -12,7 +19,7 @@ function App() {
 				return response.text();
 			})
 			.then((data) => {
-				setMerchants(data);
+				setMerchants(JSON.parse(data));
 			})
 			.catch((error) => {
 				console.log(error);
@@ -25,7 +32,8 @@ function App() {
 
 	return (
 		<div>
-			{merchants ? merchants : "There is no merchant data available"}
+			{!merchants && <div>No merchants available</div>}
+			{merchants && <Table data={merchants} />}
 		</div>
 	);
 }
