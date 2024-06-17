@@ -12,6 +12,9 @@ const Table = ({ data }: TableProps) => {
 		<table>
 			<thead>
 				<tr>
+					<th rowSpan={3}>Merchants</th>
+				</tr>
+				<tr>
 					<th>ID</th>
 					<th>Name</th>
 					<th>E-mail</th>
