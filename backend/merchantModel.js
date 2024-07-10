@@ -15,25 +15,25 @@ const pool = new Pool({
 const getMerchants = async () => {
 	console.log("...Get Merchants...");
 
-	// try {
-	return await new Promise(function (myResolve, myReject) {
-		pool.query("SELECT * FROM merchants", (error, results) => {
-			// if (error) {
-			// 	console.log(1);
-			// 	myReject(error);
-			// }
-			if (results && results.rows) {
-				console.log(`Number of merchants: ${results.rows.length}`);
-				myResolve(results.rows);
-			} else {
-				myReject(new Error("No results found"));
-			}
+	try {
+		return await new Promise(function (myResolve, myReject) {
+			pool.query("SELECT * FROM merchants", (error, results) => {
+				if (error) {
+					console.log("ERROR: ", error);
+					myReject(error);
+				}
+				if (results && results.rows) {
+					console.log(`Number of merchants: ${results.rows.length}`);
+					myResolve(results.rows);
+				} else {
+					myReject(new Error("No results found"));
+				}
+			});
 		});
-	});
-	// } catch (error_1) {
-	// 	console.log(4);
-	// 	throw new Error("Internal server error");
-	// }
+	} catch (error_1) {
+		console.error(error_1);
+		throw new Error("Internal server error");
+	}
 };
 
 export { getMerchants };

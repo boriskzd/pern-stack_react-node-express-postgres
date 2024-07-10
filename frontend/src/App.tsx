@@ -14,6 +14,7 @@ function App() {
 	const [merchants, setMerchants] = useState<Merchants>(null);
 
 	function getMerchant() {
+		console.log("[APP] - getMerchants API call");
 		fetch("http://localhost:3001") // TODO: import this port from backend ?
 			.then((response) => {
 				return response.text();
