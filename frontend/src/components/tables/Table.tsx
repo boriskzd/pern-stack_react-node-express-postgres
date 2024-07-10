@@ -12,7 +12,7 @@ const Table = ({ data }: TableProps) => {
 		<table>
 			<thead>
 				<tr>
-					<th rowSpan={3}>Merchants</th>
+					<th colSpan={3}>Merchants</th>
 				</tr>
 				<tr>
 					<th>ID</th>

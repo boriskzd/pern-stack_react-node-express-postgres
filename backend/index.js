@@ -1,4 +1,3 @@
-// import { getMerchants } from "./merchantModel";
 import express from "express";
 import { getMerchants } from "./merchantModel.js";
 const app = express();
@@ -28,6 +27,7 @@ app.use(function (req, res, next) {
 app.get("/", (req, res) => {
 	getMerchants()
 		.then((response) => {
+			// console.log(response);
 			res.status(200).send(response);
 		})
 		.catch((error) => {

@@ -47,3 +47,7 @@ Run `npm run dev` to start your frontend
     npm run dev
 
 Open `http://localhost:5173/` to see your app
+
+### Tutorial:
+
+https://blog.logrocket.com/getting-started-postgres-react-app/
