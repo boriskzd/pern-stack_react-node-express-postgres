@@ -48,6 +48,22 @@ Run `npm run dev` to start your frontend
 
 Open `http://localhost:5173/` to see your app
 
+### Database ( POSTGRES )
+
+Start database as 'my_user' user
+
+```
+psql -d postgres -U my_user;
+```
+
+Navigate to database
+
+```
+\c my_database
+```
+
+Do stuff with PSQL commandcs
+
 ### Tutorial:
 
 https://blog.logrocket.com/getting-started-postgres-react-app/
