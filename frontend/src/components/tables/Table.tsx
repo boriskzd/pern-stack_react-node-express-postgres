@@ -1,4 +1,4 @@
-import { Merchants } from "../../App";
+import { Merchants } from '../../App';
 
 interface TableProps {
 	data: Merchants;
@@ -6,7 +6,6 @@ interface TableProps {
 
 const Table = ({ data }: TableProps) => {
 	console.log(data);
-	// data && console.warn(data[0]);
 
 	return (
 		<table>
@@ -22,7 +21,7 @@ const Table = ({ data }: TableProps) => {
 			</thead>
 			<tbody>
 				{data?.map((merchant) => (
-					<tr>
+					<tr key={merchant.id}>
 						<td>{merchant.id}</td>
 						<td>{merchant.name}</td>
 						<td>{merchant.email}</td>
